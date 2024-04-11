@@ -272,3 +272,52 @@ class DecisionTree():
         plt.title('Feature Importance')
         plt.xticks()
         plt.show()
+
+    def plot_decision_tree(self, feature_names, fig_size=(12, 6)):
+        """        
+        Plots the decision tree structure.
+        FIXME: fix distance calcs. some overlapping nodes/leaves.
+        Inputs:
+            - feature_names (list): List of feature names.
+        """
+        _, ax = plt.subplots(figsize= fig_size)
+        
+        def plot_tree_recursive(node, x, y, dx, dy):
+            if node is not None:
+                if node.information_gain > self.min_information_gain:
+                    feature_name = feature_names[node.feature_idx]
+                    text = f"Feature {feature_name} < {node.feature_val:.2f}\nInformation Gain = {node.information_gain:.2f}"
+                    ax.text(x, y, text, ha='center', va='center', bbox=dict(facecolor='lightblue', edgecolor='black'))
+                    if node.left:
+                        ax.plot([x, x - dx], [y - 1, y - dy], '-k')  # Left arrow
+                        plot_tree_recursive(node.left, x - dx, y - dy, dx / 2, dy)
+                    if node.right:
+                        ax.plot([x, x + dx], [y - 1, y - dy], '-k')  # Right arrow
+                        plot_tree_recursive(node.right, x + dx, y - dy, dx / 2, dy)
+                
+                else:
+                    num_samples = node.data.shape[0]
+                    unique_values, value_counts = np.unique(node.data[:, -1], return_counts=True)
+                    values_info = ", ".join([f"\n[Class {value.astype(int)}: {count}]" for value, count in zip(unique_values, value_counts)])
+                    ax.text(x, y - dy/8, f"Class: {np.argmax(node.prediction_probs)}\n# Samples: {num_samples}\nClass Counts: {values_info}", ha='center', va='center', bbox=dict(facecolor='lightgreen', edgecolor='black'))
+
+        depth = self.get_tree_depth(self.tree)
+        dx = 10 / (2 ** depth)
+        dy = 8
+        
+        plot_tree_recursive(self.tree, 0, 0, dx, dy)
+        ax.axis('off')
+        plt.show()
+
+    def get_tree_depth(self, node):
+        """
+        Calculates the depth of the decision tree.
+        """
+        if node is None:
+            return 0
+        elif node.left is None and node.right is None:
+            return 1
+        else:
+            left_depth = self.get_tree_depth(node.left)
+            right_depth = self.get_tree_depth(node.right)
+            return max(left_depth, right_depth) + 1
