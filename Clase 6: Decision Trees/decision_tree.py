@@ -199,7 +199,6 @@ class DecisionTree():
             - X_train (np.array): training features
             - Y_train (np.array): training labels
         """
-
         # Concat features and labels
         self.labels_in_train = np.unique(Y_train)
         train_data = np.concatenate((X_train, np.reshape(Y_train, (-1, 1))), axis=1)
@@ -215,7 +214,6 @@ class DecisionTree():
         """
         Returns the predicted probs for a given data set
         """
-
         pred_probs = np.apply_along_axis(self.predict_one_sample, 1, X_set)
         
         return pred_probs
@@ -224,7 +222,6 @@ class DecisionTree():
         """
         Returns the predicted labels for a given data set
         """
-
         pred_probs = self.predict_proba(X_set)
         preds = np.argmax(pred_probs, axis=1)
         
@@ -241,7 +238,9 @@ class DecisionTree():
 
     def calculate_feature_importance(self, node):
         """
-        Calculates the feature importance by visiting each node in the tree recursively
+        Calculates the feature importance based on how often it is used 
+        for splitting and how much it contributes to reducing the impurity 
+        of the dataset at each node in the decision tree.
         """
         if node != None:
             self.feature_importances[node.feature_idx] += node.feature_importance
