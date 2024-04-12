@@ -8,7 +8,7 @@ class DecisionTree():
                  max_depth=4, 
                  min_samples_leaf=1, 
                  min_information_gain=0.0, 
-                 numb_of_features_splitting=None) -> None:
+                 max_features=None) -> None:
         """
         Constructor function for DecisionTree instance
         Inputs:
@@ -17,16 +17,16 @@ class DecisionTree():
                                     to make the splitting possible
             min_information_gain (float): min information gain required to make the 
                                           splitting possible
-            num_of_features_splitting (str):  number of features (n_features) to consider 
+            max_features (str):  number of features (n_features) to consider 
                                               when looking for the best split:
-                                            - if sqrt then num_of_features_splitting = sqrt(n_features), 
-                                            - if log then num_of_features_splitting = log2(n_features),
-                                            - if None then num_of_features_splitting = n_features.                                     
+                                            - if sqrt then max_features = sqrt(n_features), 
+                                            - if log then max_features = log2(n_features),
+                                            - if None then max_features = n_features.                                     
         """
         self.max_depth = max_depth
         self.min_samples_leaf = min_samples_leaf
         self.min_information_gain = min_information_gain
-        self.numb_of_features_splitting = numb_of_features_splitting
+        self.max_features = max_features
 
     def entropy(self, class_probabilities: list) -> float:
         return sum([-p * np.log2(p) for p in class_probabilities if p>0])
@@ -72,7 +72,7 @@ class DecisionTree():
     def select_features_to_use(self, data: np.array) -> list:
         """
         Randomly selects the subset of features to use while 
-        splitting with respect to hyperparameter numb_of_features_splitting
+        splitting with respect to hyperparameter max_features
 
         Inputs:
         - data (np.array): numpy array with training data.
@@ -82,9 +82,9 @@ class DecisionTree():
         """
         feature_idx = list(range(data.shape[1]-1))
 
-        if self.numb_of_features_splitting == "sqrt":
+        if self.max_features == "sqrt":
             feature_idx_to_use = np.random.choice(feature_idx, size=int(np.sqrt(len(feature_idx))))
-        elif self.numb_of_features_splitting == "log":
+        elif self.max_features == "log":
             feature_idx_to_use = np.random.choice(feature_idx, size=int(np.log2(len(feature_idx))))
         else:
             feature_idx_to_use = feature_idx
