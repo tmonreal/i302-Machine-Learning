@@ -1,0 +1,5 @@
+# Ignore all files in the TP4/data folder
+TP4/data/
+
+# Ignore the PF SUVs CSV file
+Proyecto Final/SUVs/pf_suvs_i302_1s2024.csv
