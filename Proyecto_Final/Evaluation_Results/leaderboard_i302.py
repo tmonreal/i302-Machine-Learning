@@ -3,7 +3,7 @@ import streamlit as st
 #import plotly.express as px
 
 # Load the results
-results_df = pd.read_csv('i302-Machine-Learning/Proyecto_Final/Evaluation_Results/test_results_fair.csv')
+results_df = pd.read_csv('Proyecto_Final/Evaluation_Results/test_results_fair.csv')
 results_df['RMSE'] = results_df['RMSE'].apply(lambda x: f"{x:.2f}")  # Format RMSE to 2 decimal places
 results_df['R²'] = results_df['R²'].apply(lambda x: f"{x:.2f}")  # Format R2 to 2 decimal places
 
