@@ -2,9 +2,9 @@
 TP4/data/
 
 # Ignore the PF SUVs CSV file
-Proyecto Final/SUVs/pf_suvs_i302_1s2024.csv
-Proyecto Final/SUVs/pf_suvs_test_i302_1s2024.csv
-Proyecto Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
+Proyecto_Final/SUVs/pf_suvs_i302_1s2024.csv
+Proyecto_Final/SUVs/pf_suvs_test_i302_1s2024.csv
+Proyecto_Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
 
 # Ignore student´s prediction files
-Proyecto Final/Student´s Predictions
+Proyecto_Final/Student´s Predictions
