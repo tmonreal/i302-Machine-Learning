@@ -1,0 +1,19 @@
+Modelo,Alumnos,RMSE,R²
+XGBoost,Dan Shlamovitz y Bruno Castagnino Rossi,6763.17,0.89
+XGBoost,Jack Spolski y Julieta Zimmerman,7336.6,0.87
+XGBoost,Marcos Piotto y Segundo Santos,7812.29,0.86
+XGBoost,Ignacio Schuemer y Santiago Torres,8168.33,0.84
+Random Forest,Tiziano Martín y Trinidad Pujol,8344.58,0.84
+XGBoost,Agustín Manzano y Máximo Simian,8839.06,0.82
+Regresion L1,Ana Cotler y Nina Rigal,8940.11,0.8
+Regresion L2,Ana Cotler y Nina Rigal,9160.38,0.79
+XGBoost,Ana Cotler y Nina Rigal,9253.28,0.79
+Neural Network,Tiziano Martín y Trinidad Pujol,9949.07,0.77
+XGBoost,Santiago Carrillo y Serena Feldberg,10200.18,0.76
+Neural Network,Marcos Piotto y Segundo Santos,10595.74,0.72
+XGBoost,Maximo Matias Videla y Santiago Pourteau,10667.67,0.73
+Random Forest,Bryan Drexler y Fausto Pettinari,11690.36,0.69
+Regresion,Marcos Piotto y Segundo Santos,13180.69,0.57
+Random Forest,Mateo Giacometti y Matias Antezana,14364.42,0.52
+Random Forest,Tomas Carrie y Gonzalo Lewit,17560.59,0.28
+Random Forest,Agustina Videla Rivero y Michelle Berezovsky,23052.67,-0.24

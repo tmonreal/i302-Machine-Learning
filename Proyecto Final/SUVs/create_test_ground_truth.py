@@ -23,4 +23,3 @@ ground_truth_path = '/home/linar/Desktop/ML/Clases/i302/Proyecto Final/SUVs/grou
 ground_truth_df.to_csv(ground_truth_path, index=False)
 
 print(f"Ground truth test set saved to {ground_truth_path}")
-
