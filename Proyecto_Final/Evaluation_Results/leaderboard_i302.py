@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import plotly.express as px
+#import plotly.express as px
 
 # Load the results
 results_df = pd.read_csv('/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Evaluation_Results/test_results_fair.csv')
@@ -34,9 +34,9 @@ st.table(results_df.style.set_table_styles([{
     'props': [('font-size', '18px')]
 }]))
 
-# Top N Models Bar Chart
+""" # Top N Models Bar Chart
 N = 18  # Number of top models to display
 top_n_models = results_df.head(N)
 st.subheader(f"Top {N} Models by RMSE")
 fig = px.bar(top_n_models, x='RMSE', y='Alumnos', color='Modelo', orientation='h', title=f'Top {N} Models by RMSE')
-st.plotly_chart(fig)
+st.plotly_chart(fig) """
