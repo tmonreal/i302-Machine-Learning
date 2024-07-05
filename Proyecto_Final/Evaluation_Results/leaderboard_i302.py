@@ -3,7 +3,7 @@ import streamlit as st
 #import plotly.express as px
 
 # Load the results
-results_df = pd.read_csv('/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Evaluation_Results/test_results_fair.csv')
+results_df = pd.read_csv('i302-Machine-Learning/Proyecto_Final/Evaluation_Results/test_results_fair.csv')
 results_df['RMSE'] = results_df['RMSE'].apply(lambda x: f"{x:.2f}")  # Format RMSE to 2 decimal places
 results_df['R²'] = results_df['R²'].apply(lambda x: f"{x:.2f}")  # Format R2 to 2 decimal places
 
@@ -33,10 +33,3 @@ st.table(results_df.style.set_table_styles([{
     'selector': 'td',
     'props': [('font-size', '18px')]
 }]))
-
-""" # Top N Models Bar Chart
-N = 18  # Number of top models to display
-top_n_models = results_df.head(N)
-st.subheader(f"Top {N} Models by RMSE")
-fig = px.bar(top_n_models, x='RMSE', y='Alumnos', color='Modelo', orientation='h', title=f'Top {N} Models by RMSE')
-st.plotly_chart(fig) """
