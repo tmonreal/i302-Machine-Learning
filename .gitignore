@@ -1,7 +1,10 @@
-# Ignore all files in the TP4/data folder
-TP4/data/
-
-# Ignore the PF SUVs CSV file
+# Ignore all heavy dataset files
+TPs/TP2/datasets
+TPs/TP3/Data
+TPs/TP3/car.csv
+TPs/TP3/farmingham_test.csv
+TPs/TP3/framingham.csv
+TPs/TP4/data/
 Proyecto_Final/SUVs/pf_suvs_i302_1s2024.csv
 Proyecto_Final/SUVs/pf_suvs_test_i302_1s2024.csv
 Proyecto_Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
