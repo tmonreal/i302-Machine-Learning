@@ -8,3 +8,14 @@ Proyecto_Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
 
 # Ignore student´s prediction files
 Proyecto_Final/Student´s Predictions
+
+# Ignore others
+__pycache__
+.ipynb_checkpoints
+bin
+etc
+include
+lib
+lib64
+old
+share
