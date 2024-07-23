@@ -10,12 +10,12 @@ Proyecto_Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
 Proyecto_Final/Student´s Predictions
 
 # Ignore others
-__pycache__
-.ipynb_checkpoints
-bin
-etc
-include
-lib
-lib64
-old
-share
+/__pycache__
+/.ipynb_checkpoints
+/bin
+/etc
+/include
+/lib
+/lib64
+/old
+/share
