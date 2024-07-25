@@ -29,6 +29,7 @@ plt.ylabel('RMSErr')
 plt.xlabel('Poly order')
 plt.legend(); plt.show()
 
+
 #[Datos - split]
 # generar toy dataset en pkl
 import pandas as pd
