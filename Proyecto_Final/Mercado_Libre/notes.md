@@ -8,7 +8,7 @@
 - Features nos dan todos los que tienen. Hay muchos N/A (no informado). No todos sirven. Ellos en general las descartan porque la imputación no les sirve. 
 
 La idea es que cuando recibamos el bache nuevo, hagas:
-1.  un estudio exploratorio de los datos como para verificar que estén bien. Ahi podes interactuar con Abigail, para hacerle preguntas o pedirle algo específico.
+1. Un estudio exploratorio de los datos como para verificar que estén bien. Ahi podes interactuar con Abigail, para hacerle preguntas o pedirle algo específico.
 
 2. Una vez que estemos OK con los datos (features, polígonos, etc), armes modelos para verificar que el problema es abordable con las técnicas de ML que damos en el curso. 
 
