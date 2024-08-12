@@ -29,7 +29,27 @@ plt.ylabel('RMSErr')
 plt.xlabel('Poly order')
 plt.legend(); plt.show()
 
+# [regresión con funcion base sinusoidal]
+def sinusoidal_basis(x, degree):
+    return np.sin(2 * np.pi * x * degree)
 
+w_sin = get_best_coef(X, Y, M, basis_fn=sinusoidal_basis)
+y_pred_sin = model_predict(w_sin, X, basis_fn=sinusoidal_basis)
+
+# Plotting
+plt.figure(figsize=(12, 5))
+plt.scatter(X, Y, label="Data", color='blue')
+plt.plot(x_true_plot, y_true_plot, label='$f(x) = sin(2 \pi x)$', color='green')
+plt.plot(np.sort(X), y_pred_sin[np.argsort(X)], label="Sinusoidal Fit", color='red')
+plt.title("Sinusoidal Basis Function Fit")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.legend()
+plt.show()
+
+###########
+### OLD ###
+###########
 #[Datos - split]
 # generar toy dataset en pkl
 import pandas as pd
