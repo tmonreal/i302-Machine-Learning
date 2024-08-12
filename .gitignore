@@ -1,5 +1,5 @@
 # Ignore all heavy dataset files
-TPs/TP2/datasets
+TPs/TP2/Data
 TPs/TP3/Data
 TPs/TP3/car.csv
 TPs/TP3/farmingham_test.csv
@@ -8,9 +8,11 @@ TPs/TP4/data/
 Proyecto_Final/SUVs/pf_suvs_i302_1s2024.csv
 Proyecto_Final/SUVs/pf_suvs_test_i302_1s2024.csv
 Proyecto_Final/SUVs/pf_suvs_test_ids_i302_1s2024.csv
+Clases/02_Clase 2: Regresión Lineal/toy_dataset.pkl
 
 # Ignore student´s prediction files
 Proyecto_Final/Student´s Predictions
+Proyecto_Final/Mercado_Libre/Data
 
 # change 
 

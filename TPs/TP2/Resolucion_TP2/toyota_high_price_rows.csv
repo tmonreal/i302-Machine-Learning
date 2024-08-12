@@ -1,0 +1,25 @@
+id,Modelo,Año,Color,Tipo de combustible,Transmisión,Motor,Kilómetros,Tipo de vendedor,Set,Precio
+16262,Hilux SW4,2023.0,Gris,Diésel,Automática,2.8,0,concesionaria,Train,77033.49282296651
+16254,Hilux SW4,2024.0,,Diésel,Automática,-,0,concesionaria,Train,74641.14832535885
+13478,RAV4,2023.0,Negro,Híbrido/Nafta,Automática,2.5,1000,tienda,Train,71900.0
+13608,RAV4,2023.0,Plateado,Híbrido/Nafta,Automática,2.5,1111,concesionaria,Train,71000.0
+15822,Hilux SW4,2023.0,Negro,Diésel,Automática,2.8,1000,concesionaria,Train,68000.0
+16466,Hilux SW4,2023.0,,Diésel,Automática,2.8,5000,concesionaria,Train,78468.8995215311
+15995,Hilux SW4,2022.0,,Diésel,Automática,2.8,15000,particular,Train,68000.0
+15960,Hilux SW4,2023.0,Negro,Diésel,Automática secuencial,2.8 td 204cv,4800,particular,Train,91000.0
+13550,RAV4,2022.0,Gris,Híbrido/Nafta,Automática,2.5,8000,concesionaria,Train,67900.0
+16599,Hilux SW4,2023.0,Negro,Diésel,Automática,2.8,9800,particular,Train,69999.0
+16295,Hilux SW4,2023.0,,Diésel,Automática,2.8,0,concesionaria,Train,66000.0
+15933,Hilux SW4,2023.0,Negro,Diésel,Automática,2.8,15500,particular,Train,72000.0
+13557,RAV4,2023.0,Gris,Híbrido/Nafta,Manual,2.5,505,concesionaria,Train,71000.0
+16287,Hilux SW4,2024.0,Gris,Diésel,Automática,2.8,0,concesionaria,Train,73200.95693779904
+15823,Hilux SW4,2023.0,Blanco,Diésel,Automática,2.8,16000,particular,Train,68000.0
+16344,Hilux SW4,2023.0,,Diésel,Automática,2.8,0,concesionaria,Train,67000.0
+13497,RAV4,2023.0,Plateado,Híbrido,Automática,2.5,1000,particular,Train,70000.0
+16275,Hilux SW4,2024.0,Blanco,Diésel,Automática,2.8,0,concesionaria,Train,74900.0
+16522,Hilux SW4,2023.0,Gris,Nafta/GNC,Automática,2.8,0,concesionaria,Train,85263.15789473684
+16378,Hilux SW4,2023.0,Plateado,Diésel,Automática,2.8,4500,concesionaria,Train,89900.0
+16226,Hilux SW4,2023.0,Negro,Diésel,Automática,2.8,1500,concesionaria,Train,102000.0
+16257,Hilux SW4,2024.0,Gris,Diésel,Automática,2.8,0,concesionaria,Train,70000.0
+9793,Hilux SW4,2023.0,Blanco,Diésel,Automática,2.8,0,concesionaria,Train,70000.0
+9794,Hilux SW4,2022.0,Negro,Diésel,Automática,2.8,0,concesionaria,Train,69000.0
