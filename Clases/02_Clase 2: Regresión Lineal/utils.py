@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
 
 def get_data(N=10, noise=0.1, X_interval=(0,1), gt_fn=None, seed=42):
     generator = np.random.RandomState(seed=seed)
