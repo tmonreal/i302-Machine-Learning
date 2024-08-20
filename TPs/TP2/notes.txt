@@ -1,0 +1,78 @@
+TODO:
+Graficos ej 3:
+
+1. Idea: curvas de como prediciria el modelo entrenado vs variables importantes
+Es decir, Pedir gráficos de la predicción de cada modelo? Precio vs. año, vs. km para cada auto? como se comporta vs features.
+    - para cada modelo de auto. vs año
+    - para los datos del dev set. que usen diferentes colores para los datos de train y validate.
+    - nube de puntos de datos reales. 3 curvas, una para cada modelo. 
+    - dejar todas las otras variables en 0
+    - para ver la sensibilidad del modelo
+
+        \item Para cada modelo, graficar cómo se comporta la predicción en función del año del vehículo. Usar datos del conjunto de desarrollo, con diferentes colores para los datos de entrenamiento y validación. Dejar todas las otras variables en 0 para visualizar la sensibilidad del modelo a la variable año. Incluir una nube de puntos de datos reales y tres curvas, una para cada modelo, para observar cómo cada uno de ellos predice en función del año del vehículo.
+       
+\item Para cada modelo, graficar cómo varía la predicción en función del año del vehículo utilizando el conjunto de desarrollo. En cada gráfico:
+    \begin{itemize}
+        \item Utilizar diferentes colores para los datos de entrenamiento y validación.
+        \item Dejar todas las otras variables en 0 para centrarse en la variable año.
+        \item Incluir una nube de puntos con los datos reales y trazar tres curvas, una para cada modelo, para visualizar cómo se comportan las predicciones respecto al año.
+    \end{itemize}
+
+
+
+
+
+CLASE
+explicar la varianza es pensar en los residuos
+la varianza se debe a que x variable cambio (subio, bajo) y empuja a q la variable de salida cambie. si no esta correlacionada, no explica nada
+hay una varianza aleatoria (del ruido o de cosas q no mediste) q es imposible de explicar
+
+
+RESUMEN
+    Residuos en inciso 3.
+    Ademas de la tabla, pedir el histograma de residuos sobre train, validate, cv y test para cada uno de los 3 modelos.
+    superponer en train los 3 modelos, en validate los 3 modelos etc...
+    
+    y hat en grilla de 4 x 3. 
+    Correlacion de predicciones por dataset y por modelo. 
+
+
+
+Las predicciones de cada held out las appendeamos sobre un vector y despues aplicamos rmse o lo q sea a esa concatenación
+
+
+
+cambiarle el nombre a la feature "modelo" a "tipo" en el dataset
+verifiquen que las dsitribuciones condicionales entre dev y test son iguales.
+(recuerden que un split aleatorio puede generar distribuciones dispares entre )
+
+
+Done:
+
+Visualizaciones, ej 1
+    a) analisis de cobertura/distribucion de las features sobre dev. mirar como se distribuyen los datos en el espacio de años y km para cada modelo...
+
+    b) analisis de correlacion
+        . esto vs esto
+        . un inciso al final que sea la matriz de correlación
+        
+    - Agregar gráficos para analizar la “cobertura” en distintos features, por modelo, como ser km-año, color?
+        - No entiendo a que se refiere esto
+        - Es un analisis de la distribucion de datos en distintos espacios de features.
+        - computar el poligono de voronoi que contiene esos puntos. o hacer un scatter plot
+        - hacerlo para año 
+        ¿podes graficar la cobertura estadistica con respecto a color para cada modelo?
+
+Evaluacion, ej 3
+    2. Pedir grafico de residuos de cada modelo? Tal vez un histograma de residuos.
+        - en un eje id de datos de entrenamiento. en cada indice ver el residuo.
+        - histograma de residuos. 
+        - grafico de residuos absolutos con respecto a train. y con respecto a validate. Esto para cada modelo. 
+        - Errores absolutos. 1 grafico para train, 3 curvas una para cada modelo. 1 para validate con lo mismo. 
+        - computar el histograma y plotearlo como puntos y hacer una curva. 
+        - aclarar que queremos elegir bins que muestren una tendencia pero que no sea tan erratico.  
+        - ponerlo de forma narrativa pero univoca, que se entienda
+    grafiquen el histograma de residuos absolutos de los 3 modelos ... (en lugar de usar barras usar curvas para q se pueda visualizar)
+
+    3. Pedir grafico de y_true vs. y_hat (relacionado a R^2)? Podrian normalizar los datos con max-min, para que esten entre 0 y 1.-> sin normalizar. al final no.
+    - hacerlo sobre validate.
