@@ -34,3 +34,7 @@ Temas:
     1. Feature importance
 
 Si sobran 20 minutos, explicar la varianza. R2. Hay diferentes: Varianza de los datos naturales, varianza con respecto a la media y varianza con respecto al modelo. Con algún ejemplo unidimensional. 
+
+<span style="color: blue;">
+
+</span>
