@@ -13,3 +13,19 @@ La idea es que cuando recibamos el bache nuevo, hagas:
 2. Una vez que estemos OK con los datos (features, polígonos, etc), armes modelos para verificar que el problema es abordable con las técnicas de ML que damos en el curso. 
 
 3. Finalmente, tenemos que definir el Enunciado del PF (simil lo que hicimos este semestre), y también definir como armaremos el Test set, sobre el cual evaluaremos los modelos de los estudiantes.
+
+
+
+Preguntas para abigail:
+- Podran darnos algunos datos mas (quizás de 2023) para usar como test set? 
+- Se podran agregar otro tipo de propiedades ademas de deptos (en particular, casas)?
+- Podrás explicarme bien como armaron los poligonos? Quizas que me arme un parrafo que lo explique bien asi se lo puedo comunicar a los chicos.
+- Las primeras dos features del dataset: La primera es id. La segunda que es? Y la tercera dice id_grid. Esto es algo que les sirve a ellas o hay info en esto?
+- Que es la feature ITE_TIPO_PROD? Los posibles valores son 'U', 'N', 'S'.
+- Deberia eliminar la longitud y latitud del dataset de los alumnos, no? Y quedarnos con la info del poligono?
+
+Features que no estan en el dataset y podrian ser utiles:
+- expensas
+- numero de piso de la unidad
+- toilette
+- informacion de la zona? (cantidad de subtes/trenes/colectivos cerca, cant de colegios, cantidad de areas verdes, cantidad de comercios, cantidad de hospitales/clinicas).

@@ -12,7 +12,6 @@ def get_data(N=10, noise=0.1, X_interval=(0,1), gt_fn=None, seed=42):
 def get_best_coef(X, Y, M, basis_fn=None):
     if basis_fn is None:
         # Default to polynomial basis if none provided
-        # def basis_fn(x, degree): return x**degree
         basis_fn = lambda x, degree: x**degree
 
     # Construct the design matrix using the basis function
@@ -41,21 +40,3 @@ def model_predict(w, X, basis_fn=None):
         PHI[:, i] = basis_fn(X, i)
     
     return np.dot(PHI, w)
-
-def get_best_coef_reg(X, Y, M, basis_fn=None):
-    if basis_fn is None:
-        # Default to polynomial basis if none provided
-        basis_fn = lambda x, degree: x**degree
-
-    # Construct the design matrix using the basis function
-    PHI = np.zeros((len(X), M))
-    for i in range(M):
-        PHI[:, i] = basis_fn(X, i)
-    
-    # Solve for the coefficients using the normal equation
-    PHI_T_PHI = np.dot(PHI.T, PHI) + np.eye(PHI.shape[1]) * 1e-8
-    PHI_T_Y = np.dot(PHI.T, Y)
-    PHI_T_PHI_inv = np.linalg.inv(PHI_T_PHI)  
-    w = np.dot(PHI_T_PHI_inv, PHI_T_Y)
-    
-    return w
