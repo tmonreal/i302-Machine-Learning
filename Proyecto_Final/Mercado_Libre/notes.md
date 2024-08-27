@@ -21,10 +21,11 @@ Preguntas para abigail:
 - Se podran agregar otro tipo de propiedades ademas de deptos (en particular, casas)?
 - Podrás explicarme bien como armaron los poligonos? Quizas que me arme un parrafo que lo explique bien asi se lo puedo comunicar a los chicos.
 - Las primeras dos features del dataset: La primera es id. La segunda que es? Y la tercera dice id_grid. Esto es algo que les sirve a ellas o hay info en esto?
-- Que es la feature ITE_TIPO_PROD? Los posibles valores son 'U', 'N', 'S'.
-- Deberia eliminar la longitud y latitud del dataset de los alumnos, no? Y quedarnos con la info del poligono?
+    - La segunda feature es el id grilla, que es el id de la combinacion de cierta longitud y latitud. Van a haber aprox 3,4 propiedades con el mismo id.
+- Que es la feature ITE_TIPO_PROD? Los posibles valores son 'U', 'N', 'S'. Usado, nuevo, sin clasificacion.
+- Deberia eliminar la longitud y latitud del dataset de los alumnos, no? Y quedarnos con la info del poligono? NO. la long y latitud son del CENTROIDE del poligono al cual esta asignada esa propiedad, no de la propiedad en si. Seria lo mismo q id_grid
 
-Features que no estan en el dataset y podrian ser utiles:
+Features que no estan en el dataset y podrian ser utiles: no tienen mas features.
 - expensas
 - numero de piso de la unidad
 - toilette
