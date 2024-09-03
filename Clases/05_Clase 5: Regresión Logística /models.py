@@ -113,14 +113,6 @@ class LogisticRegression:
     
     def predict_proba(self, X):
         """
-        Predice las probabilidades de la clase positiva (y=1) para las entradas X.
-        X: matriz de características (n_samples, n_features)
-        """
-        X = self._add_intercept(X)
-        return self._sigmoid(np.dot(X, np.r_[self.intercept_, self.coef_]))
-    
-    def predict_proba(self, X):
-        """
         Predice las probabilidades para cada clase para las entradas X.
         X: matriz de características (n_samples, n_features)
         """
