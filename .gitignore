@@ -26,6 +26,9 @@ Proyecto_Final/Mercado_Libre/Data
 /old
 /share
 Clases/06_Clase 6: Decision Trees/Data/ejemploCART.csv
-TPs/TP3_2S2024/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Balanced(old)
-TPs/TP3_2S2024/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Imbalanced/
-TPs/TP3_2S2024/Diabetes/Data/
+TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Balanced(old)
+TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Imbalanced/
+TPs/TP3/Diabetes/Data/
+Clases/07_Clase 7: MLPs & Backpropagations/datasets/insurance.csv
+Clases/07_Clase 7: MLPs & Backpropagations/datasets/test.csv
+Clases/07_Clase 7: MLPs & Backpropagations/datasets/train.csv
