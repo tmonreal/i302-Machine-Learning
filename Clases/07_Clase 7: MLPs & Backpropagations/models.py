@@ -44,7 +44,7 @@ class MLP(object):
         delta = [np.zeros(w.shape) for w in self.weights]
         h_prime = self.getDerivitiveActivationFunction(self.activations[-1])
         output = z[-1]
-        delta[-1] = (output - y) * h_prime(a[-1])  # Derivative of binary cross-entropy loss
+        delta[-1] = (output - y)  # Derivative of binary cross-entropy loss
 
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
