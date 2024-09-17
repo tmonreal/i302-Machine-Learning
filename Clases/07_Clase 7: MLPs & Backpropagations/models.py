@@ -39,11 +39,12 @@ class MLP(object):
             z.append(np.copy(z_l))
 
         return a, z
-
+    
     def backward_pass(self, a, z, y):
         delta = [np.zeros(w.shape) for w in self.weights]
         h_prime = self.getDerivitiveActivationFunction(self.activations[-1])
-        delta[-1] = (z[-1] - y) * h_prime(a[-1])
+        output = z[-1]
+        delta[-1] = (output - y) * h_prime(a[-1])  # Derivative of binary cross-entropy loss
 
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
@@ -57,7 +58,8 @@ class MLP(object):
             nabla_b[l - 1] = delta[l - 1]
             nabla_w[l - 1] = np.dot(delta[l - 1], z[l - 1].T)
 
-        loss = np.sum((z[-1] - y) ** 2) / 2
+        # Binary cross-entropy loss
+        loss = -np.sum(y * np.log(output + 1e-9) + (1 - y) * np.log(1 - output + 1e-9)) / y.shape[0] # Add small constant 1e-9 to avoid logarithm of zero
         return nabla_b, nabla_w, loss
 
     def update_mini_batch(self, mini_batch, lr):
@@ -75,7 +77,7 @@ class MLP(object):
         self.biases = [b - lr * nb for b, nb in zip(self.biases, nabla_b)]
         return total_loss / len(mini_batch)
 
-    def fit(self, training_data, epochs, mini_batch_size, lr, val_data=None, verbose=1):
+    def fit(self, training_data, epochs, mini_batch_size, lr, val_data=None, verbose=0):
         """
         Trains the MLP model with the specified data and parameters
         Inputs:
@@ -90,8 +92,11 @@ class MLP(object):
         val_losses = []
         n = len(training_data)
         
+        # Determine whether to use tqdm progress bar and detailed printout
         use_tqdm = verbose == 0 or verbose == 2
         print_detailed = verbose == 1 or verbose == 2
+        
+        # Initialize tqdm progress bar if needed
         progress_bar = tqdm(total=epochs, desc="Training Epochs") if use_tqdm else None
 
         for e in range(epochs):
@@ -118,15 +123,13 @@ class MLP(object):
                 else:
                     print(f"Epoch {e + 1}: Train Loss: {avg_train_loss:.4f}")
 
-            # Update tqdm progress bar
             if use_tqdm:
                 progress_bar.update(1)
 
         if use_tqdm:
             progress_bar.close()
 
-        if self.plot:
-            # Plot the training and validation loss curves
+        if self.plot: # Plot the training and validation loss curves
             plt.figure(figsize=(10, 6))
             plt.plot(train_losses, label='Training Loss')
             if val_losses:
@@ -139,21 +142,21 @@ class MLP(object):
             plt.show()
 
         return train_losses, val_losses
-
-
+    
     def evaluate(self, test_data):
         """
         Evaluates the model's performance on test data
         Inputs:
             test_data: list of tuples (X_test, y_test)
         Returns:
-            Average sum of squared errors
+            Average binary cross-entropy loss
         """
-        sum_squared_error = 0
+        sum_loss = 0
         for x, y in test_data:
             prediction = self.forward_pass(x)[-1][-1]
-            sum_squared_error += np.sum((prediction - y) ** 2)
-        return sum_squared_error / len(test_data)
+            # Compute binary cross-entropy loss
+            sum_loss += -np.sum(y * np.log(prediction + 1e-9) + (1 - y) * np.log(1 - prediction + 1e-9))
+        return sum_loss / len(test_data)
 
     def predict(self, X):
         """
