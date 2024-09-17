@@ -20,13 +20,15 @@ class MinMaxScaler:
         return self.transform(X)
     
 class StandardScaler:
-    def __init__(self):
-        self.mean_ = None
-        self.var_ = None
+    def __init__(self, mean = None, var = None):
+        self.mean_ = mean
+        self.var_ = var
     
     def fit(self, X):
-        self.mean_ = np.mean(X, axis=0)
-        self.var_ = np.var(X, axis=0)
+        if self.mean_ is None:
+            self.mean_ = np.mean(X, axis=0)
+        if self.var is None:
+            self.var_ = np.var(X, axis=0)
     
     def transform(self, X):
         if self.mean_ is None or self.var_ is None:
