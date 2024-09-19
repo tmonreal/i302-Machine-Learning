@@ -7,12 +7,12 @@ class MLP(object):
 
     def __init__(self, layers=[4, 5, 1], activations=["relu", "sigmoid"], verbose=True, plot=False) -> None:
         """
-        Constructor function for an MLP instance
+        Initializes the MLP with specified layers, activations, and optional verbosity/plotting settings.
         Inputs:
-            layers: list of integers representing the number of nodes in each layer
-            activations: list of activation functions for each layer
-            verbose: boolean flag to enable/disable logging
-            plot: boolean flag to enable/disable learning curves plotting
+            layers: List of integers representing the number of nodes in each layer.
+            activations: List of activation functions for each layer.
+            verbose: Boolean flag for logging output.
+            plot: Boolean flag for plotting learning curves.
         """
         assert len(layers) == len(activations) + 1, "Number of layers and activations mismatch"
         self.layers = layers
@@ -26,14 +26,20 @@ class MLP(object):
         self.weights = [np.random.randn(y, x) for x, y in zip(layers[:-1], layers[1:])]
 
     def forward_pass(self, x):
+        """
+        Performs forward propagation of input data through the MLP.
+        Inputs:
+            x: Features vector (input data).
+        Returns:
+            a: List of preactivations for each layer.
+            z: List of activations for each layer.
+        """
         z = [np.array(x).reshape(-1, 1)]  # Input activation (reshape to column vector)
         a = []  # To store preactivations
 
         for l in range(1, self.num_layers):
             a_l = np.dot(self.weights[l - 1], z[l - 1]) + self.biases[l - 1]
             a.append(np.copy(a_l))
-
-            # Get activation function
             h = self.getActivationFunction(self.activations[l - 1])
             z_l = h(a_l)
             z.append(np.copy(z_l))
@@ -41,6 +47,17 @@ class MLP(object):
         return a, z
     
     def backward_pass(self, a, z, y):
+        """
+        Performs backward propagation to compute gradients of the loss with respect to weights and biases.
+        Inputs:
+            a: List of preactivations from forward pass.
+            z: List of activations from forward pass.
+            y: True target values.
+        Returns:
+            nabla_b: List of gradients for biases.
+            nabla_w: List of gradients for weights.
+            loss: Calculated loss value.
+        """
         delta = [np.zeros(w.shape) for w in self.weights]
         h_prime = self.getDerivitiveActivationFunction(self.activations[-1])
         output = z[-1]
@@ -59,10 +76,19 @@ class MLP(object):
             nabla_w[l - 1] = np.dot(delta[l - 1], z[l - 1].T)
 
         # Binary cross-entropy loss
-        loss = -np.sum(y * np.log(output + 1e-9) + (1 - y) * np.log(1 - output + 1e-9)) / y.shape[0] # Add small constant 1e-9 to avoid logarithm of zero
+        eps = 1e-9 # Add small constant 1e-9 to avoid log of zero
+        loss = -np.sum(y * np.log(output + eps) + (1 - y) * np.log(1 - output + eps)) / y.shape[0] 
         return nabla_b, nabla_w, loss
 
     def update_mini_batch(self, mini_batch, lr):
+        """
+        Updates model weights and biases using gradients computed from a mini-batch.
+        Inputs:
+            mini_batch: List of training samples (features and targets).
+            lr: Learning rate for gradient updates.
+        Returns:
+            Average loss for the mini-batch.
+        """
         nabla_b = [np.zeros(b.shape) for b in self.biases]
         nabla_w = [np.zeros(w.shape) for w in self.weights]
         total_loss = 0
@@ -79,14 +105,17 @@ class MLP(object):
 
     def fit(self, training_data, epochs, mini_batch_size, lr, val_data=None, verbose=0):
         """
-        Trains the MLP model with the specified data and parameters
+        Trains the MLP using the provided training data, with options for validation and verbosity.
         Inputs:
-            training_data: list of tuples (X_train, y_train)
-            epochs: number of iterations to train
-            mini_batch_size: size of mini batches for gradient descent
-            lr: learning rate
-            val_data: optional validation data to evaluate performance after each epoch
-            verbose: 0 for progress bar, 1 for epoch-wise printout, 2 for both
+            training_data: List of tuples (features, targets) for training.
+            epochs: Number of epochs to train.
+            mini_batch_size: Number of samples per mini-batch.
+            lr: Learning rate.
+            val_data: Optional validation data for performance monitoring.
+            verbose: Verbosity level for progress output.
+        Returns:
+            train_losses: List of training loss values per epoch.
+            val_losses: List of validation loss values per epoch (if validation data is provided).
         """
         train_losses = []
         val_losses = []
@@ -95,21 +124,18 @@ class MLP(object):
         # Determine whether to use tqdm progress bar and detailed printout
         use_tqdm = verbose == 0 or verbose == 2
         print_detailed = verbose == 1 or verbose == 2
-        
-        # Initialize tqdm progress bar if needed
         progress_bar = tqdm(total=epochs, desc="Training Epochs") if use_tqdm else None
 
         for e in range(epochs):
             random.shuffle(training_data)
             mini_batches = [training_data[i:i + mini_batch_size] for i in range(0, n, mini_batch_size)]
             
-            epoch_train_losses = []  # List to store losses for this epoch
+            epoch_train_losses = []
 
             for mini_batch in mini_batches:
                 train_loss = self.update_mini_batch(mini_batch, lr)
-                epoch_train_losses.append(train_loss)  # Append loss of each mini-batch
+                epoch_train_losses.append(train_loss)
 
-            # Calculate the average train loss for the epoch
             avg_train_loss = sum(epoch_train_losses) / len(epoch_train_losses)
             train_losses.append(avg_train_loss)
             
@@ -145,11 +171,11 @@ class MLP(object):
     
     def evaluate(self, test_data):
         """
-        Evaluates the model's performance on test data
+        Evaluates the model on a given test dataset.
         Inputs:
-            test_data: list of tuples (X_test, y_test)
+            test_data: List of tuples (features, targets) for evaluation.
         Returns:
-            Average binary cross-entropy loss
+            Average binary cross-entropy loss on the test data.
         """
         sum_loss = 0
         for x, y in test_data:
@@ -160,11 +186,11 @@ class MLP(object):
 
     def predict(self, X):
         """
-        Predicts labels for input data X
+        Predicts output labels for input data.
         Inputs:
-            X: array-like input data
+            X: Array-like input data for prediction.
         Returns:
-            Predicted labels as numpy array
+            Predictions as a numpy array.
         """
         predictions = []
         for x in X:
@@ -174,6 +200,13 @@ class MLP(object):
 
     @staticmethod
     def getActivationFunction(name):
+        """
+        Returns the activation function based on the provided name.
+        Inputs:
+            name: String representing the activation function ('sigmoid' or 'relu').
+        Returns:
+            Activation function corresponding to the name.
+        """
         if name == 'sigmoid':
             return lambda x: 1 / (1 + np.exp(-x))
         elif name == 'relu':
@@ -184,6 +217,13 @@ class MLP(object):
 
     @staticmethod
     def getDerivitiveActivationFunction(name):
+        """
+        Returns the derivative of the activation function based on the provided name.
+        Inputs:
+            name: String representing the activation function ('sigmoid' or 'relu').
+        Returns:
+            Derivative of the activation function.
+        """
         if name == 'sigmoid':
             sig = lambda x: 1 / (1 + np.exp(-x))
             return lambda x: sig(x) * (1 - sig(x))
