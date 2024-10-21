@@ -11,6 +11,7 @@ Notebooks Introductorios/datasets
 # Ignore student´s prediction files
 Proyecto_Final/Student´s Predictions
 Proyecto_Final/Mercado_Libre/Data
+Proyecto_Final/Default/Data
 
 # Ignore others
 /__pycache__
