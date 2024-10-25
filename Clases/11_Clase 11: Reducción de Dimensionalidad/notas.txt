@@ -1,0 +1,13 @@
+Fuentes para dar t-sne:
+1- murphy, chapter 20.4.10 t-SNE
+2- Easier explained, and references to original paper: https://towardsdatascience.com/t-sne-clearly-explained-d84c537f53a
+3- intro of manifold learning https://scikit-learn.org/1.5/modules/manifold.html#t-distributed-stochastic-neighbor-embedding-t-sne
+4- Nice visualizations https://distill.pub/2016/misread-tsne/ 
+5- good ppt https://www.cs.toronto.edu/~jlucas/teaching/csc411/lectures/lec13_handout.pdf  + notes https://csgrad.science.uoit.ca/courses/ist2/notebooks/t-sne.html
+6- ver video de fiuba
+7- columbia notes, well explained: https://www.cs.columbia.edu/~verma/classes/uml/lec/uml_lec8_tsne.pdf
+
+Si quiero dar UMAP tambien:
+https://pair-code.github.io/understanding-umap/ 
+
+Creo que me conviene seguir el de columbia + una intro previa de manifold learning de murphy + scikit + si queda tiempo un poco de umap visualmente, sin mucha matematica.

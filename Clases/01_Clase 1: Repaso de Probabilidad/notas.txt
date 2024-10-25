@@ -1,0 +1,2 @@
+TODO:
+agregar t-student distribution y mejor explicacion de KL divergence (para t-sne)
