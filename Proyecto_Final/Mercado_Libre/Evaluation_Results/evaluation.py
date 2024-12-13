@@ -4,9 +4,9 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Define paths
-predictions_folder = '/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Mercado_Libre/Student_Predictions'
-ground_truth_path = '/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Mercado_Libre/Evaluation_Results/ground_truth_test.csv'
-output_path = '/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Mercado_Libre/Evaluation_Results/test_results.csv'
+predictions_folder = 'Proyecto_Final/Mercado_Libre/Student_Predictions'
+ground_truth_path = 'Proyecto_Final/Mercado_Libre/Evaluation_Results/ground_truth_test.csv'
+output_path = 'Proyecto_Final/Mercado_Libre/Evaluation_Results/test_results.csv'
 
 ground_truth = pd.read_csv(ground_truth_path)
 results_list = []
