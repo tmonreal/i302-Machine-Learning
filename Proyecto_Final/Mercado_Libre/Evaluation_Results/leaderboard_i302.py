@@ -3,7 +3,7 @@ import streamlit as st
 #import plotly.express as px
 
 # Load the results
-results_df = pd.read_csv('/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Mercado_Libre/Evaluation_Results/test_results.csv')
+results_df = pd.read_csv('Proyecto_Final/Mercado_Libre/Evaluation_Results/test_results.csv')
 results_df['RMSE'] = results_df['RMSE'].apply(lambda x: f"{x:.2f}")  # Format RMSE to 2 decimal places
 results_df['R²'] = results_df['R²'].apply(lambda x: f"{x:.2f}")  # Format R2 to 2 decimal places
 
@@ -34,7 +34,7 @@ st.table(results_df.style.set_table_styles([{
     'props': [('font-size', '17px')]
 }]))
 
-results2_df = pd.read_csv('/home/linar/Desktop/ML/Clases/i302/Proyecto_Final/Default/Evaluation_Results/test_results.csv')
+results2_df = pd.read_csv('Proyecto_Final/Default/Evaluation_Results/test_results.csv')
 #Accuracy,Precision,Recall,F1 Score,AUC-ROC
 results2_df['Accuracy'] = results2_df['Accuracy'].apply(lambda x: f"{x:.2f}")  # Format RMSE to 2 decimal places
 results2_df['Precision'] = results2_df['Precision'].apply(lambda x: f"{x:.2f}")  # Format R2 to 2 decimal places
