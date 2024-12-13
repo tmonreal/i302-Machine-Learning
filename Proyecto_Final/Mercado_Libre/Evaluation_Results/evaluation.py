@@ -31,7 +31,7 @@ for filename in os.listdir(predictions_folder):
         student_names = ' '.join(filename_parts[:-2])
         
         # Append to results list
-        results_list.append({'Modelo': model_name, 'Alumnos': student_names, 'RMSE': rmse, 'R2': r2})
+        results_list.append({'Modelo': model_name, 'Alumnos': student_names, 'RMSE': rmse, 'R²': r2})
 
 results_df = pd.DataFrame(results_list).sort_values(by='RMSE', ascending=True)
 results_df.to_csv(output_path, index=False)
