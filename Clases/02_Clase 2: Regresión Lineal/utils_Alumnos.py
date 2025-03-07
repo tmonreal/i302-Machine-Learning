@@ -25,7 +25,7 @@ def get_best_coef(X, Y, M, basis_fn=None):
     PHI_T_PHI_inv = np.linalg.inv(PHI_T_PHI)  
     w = np.dot(PHI_T_PHI_inv, PHI_T_Y)
 
-    print(f"Polinomio grado {M}: {np.polynomial.polynomial.Polynomial(w)}")
+    print(f"Polinomio grado {M-1}: {np.polynomial.polynomial.Polynomial(w)}")
     print(f"ϕ: \n{PHI}")
     print(f"W:\n {w}")
     
