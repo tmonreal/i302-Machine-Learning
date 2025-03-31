@@ -26,7 +26,7 @@ class LocallyWeightedRegression:
         numpy.matrix: Diagonal weight matrix.
         """
         N = X.shape[0]  # Number of examples
-        K = np.mat(np.eye(N))  # Initialize with an identity matrix
+        K = np.asmatrix(np.eye(N))  # Initialize with an identity matrix
         for i in range(N):  # Calculate weights for the query point
             xi = X[i]
             K[i, i] = np.exp(np.dot((xi - query_x).T, xi - query_x) / (-2 * self.tau ** 2))

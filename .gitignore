@@ -1,5 +1,6 @@
 # Ignore all heavy dataset files
 TPs/TP2/Data
+TPs/TP2_Clasificacion/data
 TPs/TP4/Data/
 TPs/TP5/data/
 Proyecto_Final/SUVs/pf_suvs_i302_1s2024.csv
@@ -29,3 +30,4 @@ TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Balanced(old)
 TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Imbalanced/
 TPs/TP3/Diabetes/Data/
 Clases/07_Clase 7: MLPs & Backpropagations/datasets/
+Consultas_Alumnos
