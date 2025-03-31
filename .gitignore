@@ -18,13 +18,7 @@ Proyecto_Final/Mercado_Libre/Data
 # Ignore others
 /__pycache__
 /.ipynb_checkpoints
-/bin
-/etc
-/include
-/lib
-/lib64
-/old
-/share
+.venv
 Clases/06_Clase 6: Decision Trees/Data/ejemploCART.csv
 TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Balanced(old)
 TPs/TP3/Breast_Cancer/Data/1 - Breast Cancer Diagnosis/Imbalanced/
