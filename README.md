@@ -8,6 +8,7 @@ The repository is organized by academic terms, with each term's content maintain
 - **main**: The default branch, kept up-to-date with the latest structure and basic setup for the course.
 - **1s2024**: Contains the content and materials for the first semester of 2024.
 - **2s2024**: Contains the content and materials for the second semester of 2024.
+- **1S2025**: Contains the content and materials for the first semester of 2025.
 
 ## Getting Started
 
