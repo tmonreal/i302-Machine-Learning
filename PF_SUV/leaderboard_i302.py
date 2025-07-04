@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 st.title("🚗 Predicción de Precios de SUVs - Test Set")
 
 # Cargar resultados de SUVs
-results_df = pd.read_csv('/home/tmonreal/Desktop/i302-Machine-Learning/PF_SUV/test_results_suv.csv')
+results_df = pd.read_csv('PF_SUV/test_results_suv.csv')
 results_df['RMSE'] = results_df['RMSE'].apply(lambda x: f"{x:.2f}")
 results_df['R²'] = results_df['R²'].apply(lambda x: f"{x:.2f}")
 
@@ -40,5 +40,5 @@ st.title("🚲 Modelado Bicicletas Públicas GCBA - Test Set")
 
 # Mostrar imágenes comparativas por estación
 st.markdown("### 📊 Comparación de R² por estación")
-st.image("/home/tmonreal/Desktop/i302-Machine-Learning/PF_BIKE/r2_delta30min.png", caption="Delta 30 minutos", use_container_width=True)
-st.image("/home/tmonreal/Desktop/i302-Machine-Learning/PF_BIKE/r2_delta60min.png", caption="Delta 60 minutos", use_container_width=True)
+st.image("PF_BIKE/r2_delta30min.png", caption="Delta 30 minutos", use_container_width=True)
+st.image("PF_BIKE/r2_delta60min.png", caption="Delta 60 minutos", use_container_width=True)
