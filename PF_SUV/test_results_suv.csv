@@ -1,0 +1,19 @@
+Modelo,Alumnos,RMSE,R²
+XGboost,Nomberg Basso,4422.02,0.958
+XGBoost,Ercolano Michanie,4448.56,0.957
+LinearRegression,Ercolano Michanie,4448.56,0.957
+RandomForest,Ercolano Michanie,4590.51,0.954
+GradientBoosting,Ercolano Michanie,4590.51,0.954
+XGBoost,Arbelaiz Ostrovsky,4720.68,0.952
+XGBoost,Menceyra Viaggio,5212.5,0.941
+BagModel,Ercolano Michanie,5354.76,0.938
+Ensamble,Ercolano Michanie,5462.53,0.935
+XGBoost,Pettazi Trejo,6534.52,0.908
+catboost,Romano Verdun,6905.52,0.897
+XGB,Amblard Zimmermann,8703.49,0.836
+CATBOOST,Schadan,9705.1,0.796
+XGB,Schadan,11081.0,0.734
+GBR,Vargas Vecchietti,11805.01,0.698
+Xgboost,Villegas,12406.48,0.667
+XGBoost,Lynch,13729.29,0.592
+RF,Schadan,14049.08,0.572
